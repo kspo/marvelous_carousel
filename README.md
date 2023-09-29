@@ -1,6 +1,6 @@
-# This Stack Slider
+# This is Marvelous Carousel
 
-This application is a clone of Apple's Stocks application, written in Flutter. The application contains static data and does not have remote API integration. The purpose of the application is solely to create a fluid native Apple-like experience and provide education to viewers throughout this process.
+Marvelous Carousel is a widget that allows you to horizontally or vertically scroll through multiple images or items. It is commonly used in applications where users need to browse a collection of images or rotate through content. For example, you can use Carousel for a product gallery, a news feed, or an event calendar.
 
 ![Static Badge](https://img.shields.io/badge/Author-KSPoyraz-blue)
 [![Linkedin: Kspoyraz](https://img.shields.io/badge/Kspoyraz-blue?logo=Linkedin&logoColor=fff)][linkedin]
@@ -9,7 +9,15 @@ This application is a clone of Apple's Stocks application, written in Flutter. T
 ![GitHub last commit](https://img.shields.io/github/last-commit/kspo/apple_stocks_app_clone?label=Last+Commit)
 
 
-## Getting Started
+## 📸 Screenshots
+
+|Main Screen|
+|----|
+|<img src="screenshots/main.png" width="300px"/>|
+
+|Simple|Simple Reverse|Rotational|
+|----|----|----|
+|<img src="screenshots/main.png" width="300px"/>|<img src="screenshots/main.png" width="300px"/>|<img src="screenshots/main.png" width="300px"/>|
 
 ### Simple Carousel Example
 

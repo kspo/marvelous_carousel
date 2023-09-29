@@ -20,7 +20,7 @@ class MarvelousCarousel extends StatefulWidget {
   final PagerType pagerType;
   final double overscroll;
   final bool dotsVisible;
-  final double dotsBottomPx;
+  final double dotsBottom;
   final double margin;
 
   const MarvelousCarousel({
@@ -37,7 +37,7 @@ class MarvelousCarousel extends StatefulWidget {
     this.scrollDirection = Axis.horizontal,
     this.pagerType = PagerType.simple,
     this.dotsVisible = true,
-    this.dotsBottomPx = 30.0,
+    this.dotsBottom = 20.0,
     this.reverse = false,
     this.overscroll = 0,
     this.margin = 0,
@@ -58,7 +58,7 @@ class MarvelousCarousel extends StatefulWidget {
     PagerType pagerType = PagerType.simple,
     bool reverse = false,
     bool dotsVisible = true,
-    double dotsBottomPx = 30.0,
+    double dotsBottom = 30.0,
     double overscroll = 0,
     double margin = 0,
     Key? key,
@@ -77,7 +77,7 @@ class MarvelousCarousel extends StatefulWidget {
       pagerType: pagerType,
       reverse: reverse,
       dotsVisible: dotsVisible,
-      dotsBottomPx: dotsBottomPx,
+      dotsBottom: dotsBottom,
       overscroll: overscroll,
       key: key,
       children: children,
@@ -254,7 +254,7 @@ class _MarvelousCarouselState extends State<MarvelousCarousel> {
               ),
               widget.dotsVisible
                   ? Positioned(
-                      bottom: widget.dotsBottomPx,
+                      bottom: widget.dotsBottom,
                       left: 0,
                       right: 0,
                       child: Row(
@@ -269,10 +269,10 @@ class _MarvelousCarouselState extends State<MarvelousCarousel> {
                                     margin: EdgeInsets.only(
                                         right: 10, left: index == 0 ? 10 : 0),
                                     width: activeIndex == index ? 25 : 15,
-                                    height: 12,
+                                    height: 5,
                                     decoration: BoxDecoration(
                                       color: activeIndex == index
-                                          ? Theme.of(context).primaryColor
+                                          ? Colors.amber
                                           : Colors.grey,
                                       borderRadius: BorderRadius.circular(50),
                                     ),
