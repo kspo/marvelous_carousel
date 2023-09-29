@@ -604,6 +604,6 @@ class _SimpleCarouselState extends State<SimpleCarousel> {
 final Movie testMovie = Movie(
   bannerUrl: 'images/banner.webp',
   posterUrl: 'images/bannerprofile.jpeg',
-  title: 'Marvelous Slider',
+  title: 'Marvelous Carousel',
   categories: ['Simple', 'Easy', 'Ready to Use'],
 );
