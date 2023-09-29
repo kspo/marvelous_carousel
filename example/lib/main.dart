@@ -43,7 +43,17 @@ class _MyAppState extends State<MyApp> {
     "Stack Carousel",
     "Overscroll Stack Carousel",
     "Mixed Animation",
-    "Walk Through Slider",
+  ];
+
+  late final List<String> _widgetsTilesSubt = [
+    "This is just simple carousel. Just attach children and set direction.",
+    "Simple Carousel with reverse option. Just Play accordingly.",
+    "You can set rotation of carousel items. Visible on page change.",
+    "You can set scale of carousel items. Visible on page change.",
+    "Opacity Animation of carousel items. It's also visible on change",
+    "Stack Carousel animation, Visible on page change.",
+    "Overscroll Animation visible on page change",
+    "Mixed Animation according to all properties",
   ];
 
   @override
@@ -86,11 +96,20 @@ class _MyAppState extends State<MyApp> {
                 shrinkWrap: true,
                 itemCount: _widgets.length,
                 itemBuilder: (context, index) => ListTile(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   title: Text(
                     _widgetsTiles[index],
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   trailing: const Icon(Icons.arrow_forward),
+                  subtitle: Text(
+                    _widgetsTilesSubt[index],
+                    style: const TextStyle(height: 1.5),
+                  ),
+                  horizontalTitleGap: 20,
                   onTap: () {
                     Navigator.push(
                       context,
@@ -108,14 +127,6 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget getPage(int index, double position) {
-    return Card(
-      child: Center(
-        child: Text("$index"),
       ),
     );
   }
