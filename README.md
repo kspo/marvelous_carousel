@@ -17,7 +17,7 @@ Marvelous Carousel is a widget that allows you to horizontally or vertically scr
 
 |Scale Items|Opacity Animation|Stack|
 |----|----|----|
-|<img src="screenshots/main.png" width="300px"/>|<img src="screenshots/main.png" width="300px"/>|<img src="screenshots/main.png" width="300px"/>|
+|<img src="screenshots/scale.gif" style="width:300px"/>|<img src="screenshots/opacity.gif" style="width:300px"/>|<img src="screenshots/stack.gif" style="width:300px"/>|
 
 ### Simple Carousel Example
 
