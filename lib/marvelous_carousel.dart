@@ -1,10 +1,10 @@
-library stackslider;
+library marvelous_carousel;
 
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class StackSlider extends StatefulWidget {
+class MarvelousCarousel extends StatefulWidget {
   final double viewportFraction;
   final double scaleX;
   final double scaleY;
@@ -23,7 +23,7 @@ class StackSlider extends StatefulWidget {
   final double dotsBottomPx;
   final double margin;
 
-  const StackSlider({
+  const MarvelousCarousel({
     required this.children,
     this.physics = const BouncingScrollPhysics(),
     this.onPageChanged,
@@ -45,7 +45,7 @@ class StackSlider extends StatefulWidget {
   })  : assert(scaleX <= 1 && scaleX >= 0),
         super(key: key);
 
-  factory StackSlider.symmetric({
+  factory MarvelousCarousel.symmetric({
     required List<Widget> children,
     ValueChanged<int>? onPageChanged,
     ScrollPhysics physics = const BouncingScrollPhysics(),
@@ -63,7 +63,7 @@ class StackSlider extends StatefulWidget {
     double margin = 0,
     Key? key,
   }) {
-    return StackSlider(
+    return MarvelousCarousel(
       pageSnapping: pageSnapping,
       physics: physics,
       viewportFraction: viewportFraction,
@@ -85,12 +85,12 @@ class StackSlider extends StatefulWidget {
   }
 
   @override
-  _StackSliderState createState() => _StackSliderState();
+  _MarvelousCarouselState createState() => _MarvelousCarouselState();
 }
 
 enum PagerType { simple, stack }
 
-class _StackSliderState extends State<StackSlider> {
+class _MarvelousCarouselState extends State<MarvelousCarousel> {
   late PageController _pageController;
   double currentPageValue = 0;
   late Size screenSize;

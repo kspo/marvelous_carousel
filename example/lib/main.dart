@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stackslider/stackslider.dart';
+import 'package:marvelous_carousel/marvelous_carousel.dart';
 
 import 'arc_banner.dart';
 
@@ -57,8 +57,8 @@ class _MyAppState extends State<MyApp> {
       getVariableScaleCrousel(),
       getOpacityCrousel(),
       getStackSlider(),
-      getReverseStackSlider(),
-      getOverScrollStackSlider(),
+      getReverseMarvelousCarousel(),
+      getOverScrollMarvelousCarousel(),
       getGallerySlider(),
       const WalkThroughSliderExample(),
     ]);
@@ -124,7 +124,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getSimpleCrousel() {
-    return StackSlider(
+    return MarvelousCarousel(
       scrollDirection: Axis.horizontal,
       margin: 10,
       children: <Widget>[
@@ -213,7 +213,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getReverseCrousel() {
-    return StackSlider(
+    return MarvelousCarousel(
       reverse: true,
       margin: 10,
       scrollDirection: Axis.horizontal,
@@ -303,7 +303,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getRotationalCrousel() {
-    return StackSlider(
+    return MarvelousCarousel(
       rotationY: 60,
       margin: 10,
       scrollDirection: Axis.horizontal,
@@ -393,7 +393,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getVariableScaleCrousel() {
-    return StackSlider(
+    return MarvelousCarousel(
       scaleX: 0.8,
       scaleY: 0.4,
       margin: 10,
@@ -484,7 +484,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getOpacityCrousel() {
-    return StackSlider(
+    return MarvelousCarousel(
       opacity: 0.4,
       margin: 10,
       scrollDirection: Axis.horizontal,
@@ -574,7 +574,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getStackSlider() {
-    return StackSlider(
+    return MarvelousCarousel(
       pagerType: PagerType.stack,
       scrollDirection: Axis.vertical,
       margin: 10,
@@ -679,8 +679,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget getReverseStackSlider() {
-    return StackSlider(
+  Widget getReverseMarvelousCarousel() {
+    return MarvelousCarousel(
       reverse: true,
       pagerType: PagerType.stack,
       scrollDirection: Axis.horizontal,
@@ -770,8 +770,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget getOverScrollStackSlider() {
-    return StackSlider(
+  Widget getOverScrollMarvelousCarousel() {
+    return MarvelousCarousel(
       overscroll: -300,
       margin: 10,
       pagerType: PagerType.stack,
@@ -863,7 +863,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget getGallerySlider() {
-    return StackSlider(
+    return MarvelousCarousel(
       opacity: 0.2,
       scaleX: 0.5,
       scaleY: 0.5,
@@ -974,7 +974,7 @@ class _WalkThroughSliderExampleState extends State<WalkThroughSliderExample> {
     return Column(
       children: <Widget>[
         Expanded(
-          child: StackSlider(
+          child: MarvelousCarousel(
             pagerType: PagerType.stack,
             overscroll: -200,
             margin: 10,
