@@ -85,12 +85,12 @@ class MarvelousCarousel extends StatefulWidget {
   }
 
   @override
-  _MarvelousCarouselState createState() => _MarvelousCarouselState();
+  MarvelousCarouselState createState() => MarvelousCarouselState();
 }
 
 enum PagerType { simple, stack }
 
-class _MarvelousCarouselState extends State<MarvelousCarousel> {
+class MarvelousCarouselState extends State<MarvelousCarousel> {
   late PageController _pageController;
   double currentPageValue = 0;
   late Size screenSize;
@@ -123,170 +123,165 @@ class _MarvelousCarouselState extends State<MarvelousCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          pagerSize = constraints.biggest;
-          return Stack(
-            children: [
-              PageView.builder(
-                key: _pagerKey,
-                itemCount: widget.children.length,
-                pageSnapping: widget.pageSnapping,
-                onPageChanged: (int i) {
-                  activeIndex = i;
-                  widget.onPageChanged;
-                },
-                physics: widget.physics,
-                controller: _pageController,
-                scrollDirection: widget.scrollDirection,
-                reverse: widget.reverse,
-                itemBuilder: (context, index) {
-                  var position = index - currentPageValue;
-                  var scaleXValue = max(
-                      1 - ((position * (1 - widget.scaleX)).abs()),
-                      widget.scaleX);
-                  var scaleYValue = max(
-                      1 - ((position * (1 - widget.scaleY)).abs()),
-                      widget.scaleY);
-                  var rotationXValue = (pi / 180) *
-                      min(((position * (widget.rotationX)).abs()),
-                          widget.rotationX);
-                  var rotationYValue = (pi / 180) *
-                      min(((position * (widget.rotationY)).abs()),
-                          widget.rotationY);
-                  var opacityValue = max(
-                      1 - ((position * (1 - widget.opacity)).abs()),
-                      widget.opacity);
-                  if (widget.pagerType == PagerType.simple) {
-                    if (position == 0) {
-                      return Container(
-                          margin:
-                              EdgeInsets.symmetric(horizontal: widget.margin),
-                          child: widget.children[index]);
-                    } else {
-                      return Container(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        pagerSize = constraints.biggest;
+        return Stack(
+          children: [
+            PageView.builder(
+              key: _pagerKey,
+              itemCount: widget.children.length,
+              pageSnapping: widget.pageSnapping,
+              onPageChanged: (int i) {
+                activeIndex = i;
+                widget.onPageChanged;
+              },
+              physics: widget.physics,
+              controller: _pageController,
+              scrollDirection: widget.scrollDirection,
+              reverse: widget.reverse,
+              itemBuilder: (context, index) {
+                var position = index - currentPageValue;
+                var scaleXValue = max(
+                    1 - ((position * (1 - widget.scaleX)).abs()),
+                    widget.scaleX);
+                var scaleYValue = max(
+                    1 - ((position * (1 - widget.scaleY)).abs()),
+                    widget.scaleY);
+                var rotationXValue = (pi / 180) *
+                    min(((position * (widget.rotationX)).abs()),
+                        widget.rotationX);
+                var rotationYValue = (pi / 180) *
+                    min(((position * (widget.rotationY)).abs()),
+                        widget.rotationY);
+                var opacityValue = max(
+                    1 - ((position * (1 - widget.opacity)).abs()),
+                    widget.opacity);
+                if (widget.pagerType == PagerType.simple) {
+                  if (position == 0) {
+                    return Container(
                         margin: EdgeInsets.symmetric(horizontal: widget.margin),
-                        child: Opacity(
-                          opacity: opacityValue,
-                          child: Transform(
-                            transform: Matrix4.identity()
-                              ..scale(scaleXValue, scaleYValue)
-                              ..rotateY(rotationYValue)
-                              ..rotateX(rotationXValue),
-                            alignment: const Alignment(0, 0),
-                            child: widget.children[index],
-                          ),
-                        ),
-                      );
-                    }
-                  } else if (PagerType.stack == widget.pagerType) {
-                    if (index == currentPageValue.floor()) {
-                      var opacityValue = max(
-                          1 - ((position * (1 - widget.opacity)).abs()),
-                          widget.opacity);
-                      var scaleXValue = (widget.scaleX +
-                          (1 - widget.scaleX) * (1 - (position.abs())));
-                      var scaleYValue = (widget.scaleY +
-                          (1 - widget.scaleY) * (1 - (position.abs())));
-                      var transitionX = widget.scrollDirection ==
-                              Axis.horizontal
-                          ? (widget.reverse
-                              ? ((index - currentPageValue) *
-                                  ((pagerSize.width +
-                                      ((pagerSize.width * (1 - scaleXValue)) *
-                                          2) +
-                                      widget.overscroll)))
-                              : ((currentPageValue - index) *
-                                  ((pagerSize.width -
-                                      ((pagerSize.width * (1 - scaleXValue)) *
-                                          2) +
-                                      widget.overscroll))))
-                          : 0.0;
-                      var transitionY = widget.scrollDirection == Axis.vertical
-                          ? (widget.reverse
-                              ? ((index - currentPageValue) *
-                                  ((pagerSize.height +
-                                      ((pagerSize.height * (1 - scaleXValue)) *
-                                          2) +
-                                      widget.overscroll)))
-                              : ((currentPageValue - index) *
-                                  ((pagerSize.height -
-                                      ((pagerSize.height * (1 - scaleXValue)) *
-                                          2) +
-                                      widget.overscroll))))
-                          : 0.0;
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: widget.margin),
-                        child: Opacity(
-                          opacity: opacityValue,
-                          child: Transform(
-                            transform: Matrix4.identity()
-                              ..scale(scaleXValue ?? 0, scaleYValue ?? 0)
-                              ..rotateY(rotationYValue ?? 0)
-                              ..rotateX(rotationXValue ?? 0)
-                              ..translate(transitionX ?? 0, transitionY ?? 0),
-                            alignment: const Alignment(0, 0),
-                            child: widget.children[index],
-                          ),
-                        ),
-                      );
-                    } else if (index == currentPageValue.floor() + 1) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: widget.margin),
+                        child: widget.children[index]);
+                  } else {
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: widget.margin),
+                      child: Opacity(
+                        opacity: opacityValue,
                         child: Transform(
-                          transform: Matrix4.identity()..translate(0.0, 0.0),
-                          alignment: const Alignment(0, 1),
+                          transform: Matrix4.identity()
+                            ..scale(scaleXValue, scaleYValue)
+                            ..rotateY(rotationYValue)
+                            ..rotateX(rotationXValue),
+                          alignment: const Alignment(0, 0),
                           child: widget.children[index],
                         ),
-                      );
-                    } else {
-                      return Container(
-                          margin:
-                              EdgeInsets.symmetric(horizontal: widget.margin),
-                          child: widget.children[index]);
-                    }
-                  } else {
-                    return throw Exception(
-                        "pagertype is wrong you set, please set PagerType.simple or PagerType.stack");
-                  }
-                },
-              ),
-              widget.dotsVisible
-                  ? Positioned(
-                      bottom: widget.dotsBottom,
-                      left: 0,
-                      right: 0,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: widget.children
-                            .asMap()
-                            .map((index, item) => MapEntry(
-                                  index,
-                                  AnimatedContainer(
-                                    duration: const Duration(milliseconds: 500),
-                                    margin: EdgeInsets.only(
-                                        right: 10, left: index == 0 ? 10 : 0),
-                                    width: activeIndex == index ? 25 : 15,
-                                    height: 5,
-                                    decoration: BoxDecoration(
-                                      color: activeIndex == index
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                  ),
-                                ))
-                            .values
-                            .toList(),
                       ),
-                    )
-                  : const SizedBox(),
-            ],
-          );
-        },
-      ),
+                    );
+                  }
+                } else if (PagerType.stack == widget.pagerType) {
+                  if (index == currentPageValue.floor()) {
+                    var opacityValue = max(
+                        1 - ((position * (1 - widget.opacity)).abs()),
+                        widget.opacity);
+                    var scaleXValue = (widget.scaleX +
+                        (1 - widget.scaleX) * (1 - (position.abs())));
+                    var scaleYValue = (widget.scaleY +
+                        (1 - widget.scaleY) * (1 - (position.abs())));
+                    var transitionX = widget.scrollDirection == Axis.horizontal
+                        ? (widget.reverse
+                            ? ((index - currentPageValue) *
+                                ((pagerSize.width +
+                                    ((pagerSize.width * (1 - scaleXValue)) *
+                                        2) +
+                                    widget.overscroll)))
+                            : ((currentPageValue - index) *
+                                ((pagerSize.width -
+                                    ((pagerSize.width * (1 - scaleXValue)) *
+                                        2) +
+                                    widget.overscroll))))
+                        : 0.0;
+                    var transitionY = widget.scrollDirection == Axis.vertical
+                        ? (widget.reverse
+                            ? ((index - currentPageValue) *
+                                ((pagerSize.height +
+                                    ((pagerSize.height * (1 - scaleXValue)) *
+                                        2) +
+                                    widget.overscroll)))
+                            : ((currentPageValue - index) *
+                                ((pagerSize.height -
+                                    ((pagerSize.height * (1 - scaleXValue)) *
+                                        2) +
+                                    widget.overscroll))))
+                        : 0.0;
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: widget.margin),
+                      child: Opacity(
+                        opacity: opacityValue,
+                        child: Transform(
+                          transform: Matrix4.identity()
+                            ..scale(scaleXValue, scaleYValue)
+                            ..rotateY(rotationYValue)
+                            ..rotateX(rotationXValue)
+                            ..translate(transitionX, transitionY),
+                          alignment: const Alignment(0, 0),
+                          child: widget.children[index],
+                        ),
+                      ),
+                    );
+                  } else if (index == currentPageValue.floor() + 1) {
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: widget.margin),
+                      child: Transform(
+                        transform: Matrix4.identity()..translate(0.0, 0.0),
+                        alignment: const Alignment(0, 1),
+                        child: widget.children[index],
+                      ),
+                    );
+                  } else {
+                    return Container(
+                        margin: EdgeInsets.symmetric(horizontal: widget.margin),
+                        child: widget.children[index]);
+                  }
+                } else {
+                  return throw Exception(
+                      "pagertype is wrong you set, please set PagerType.simple or PagerType.stack");
+                }
+              },
+            ),
+            widget.dotsVisible
+                ? Positioned(
+                    bottom: widget.dotsBottom,
+                    left: 0,
+                    right: 0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: widget.children
+                          .asMap()
+                          .map((index, item) => MapEntry(
+                                index,
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 500),
+                                  margin: EdgeInsets.only(
+                                      right: 10, left: index == 0 ? 10 : 0),
+                                  width: activeIndex == index ? 25 : 15,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                    color: activeIndex == index
+                                        ? Colors.amber
+                                        : Colors.grey,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                ),
+                              ))
+                          .values
+                          .toList(),
+                    ),
+                  )
+                : const SizedBox(),
+          ],
+        );
+      },
     );
   }
 }
