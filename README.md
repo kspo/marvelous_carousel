@@ -17,11 +17,11 @@ Marvelous Carousel is a widget that allows you to horizontally or vertically scr
  ### Example Screenshots
 |Simple|Rotation|Scale Items|
 |----|----|----|
-|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/simple.gif" style="width:300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/rotation.gif" style="width:300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/scale.gif" style="width:300px"/>|
+|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/simple.gif" style="width:300px" width="300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/rotation.gif" style="width:300px" width="300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/scale.gif" style="width:300px" width="300px"/>|
 
 |Opacity Animation|Stack|Overscroll|
 |----|----|----|
-|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/opacity.gif" style="width:300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/stack.gif" style="width:300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/overscroll.gif" style="width:300px"/>|
+|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/opacity.gif" style="width:300px" width="300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/stack.gif" style="width:300px" width="300px"/>|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/overscroll.gif" style="width:300px" width="300px"/>|
 
 ## Marvelous Crousel Property List
 
