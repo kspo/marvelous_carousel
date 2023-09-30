@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class MovieDetailHeader extends StatelessWidget {
   const MovieDetailHeader(this.movie, {super.key});
   final Movie movie;

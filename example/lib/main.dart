@@ -29,10 +29,10 @@ class MyApp extends StatefulWidget {
 
   // This widget is the root of your application.
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   late final List<Widget> _widgets = [];
   late final List<String> _widgetsTiles = [
     "Simple Carousel",
