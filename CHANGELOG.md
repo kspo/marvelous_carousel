@@ -1,7 +1,11 @@
+## [0.0.7] - 2023-09-30.
+
+* Some Bug Fixes
+
 ## [0.0.6] - 2023-09-30.
 
 * Fresh new features.
-  
+
 ## [0.0.5] - 2023-08-11.
 
 * Dots positions can be set.
