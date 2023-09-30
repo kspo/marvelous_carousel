@@ -111,6 +111,7 @@ class MarvelousCarouselState extends State<MarvelousCarousel> {
     _pageController.addListener(() {
       setState(() {
         currentPageValue = _pageController.page!;
+        activeIndex = _pageController.page!.round();
       });
     });
   }
@@ -132,10 +133,7 @@ class MarvelousCarouselState extends State<MarvelousCarousel> {
               key: _pagerKey,
               itemCount: widget.children.length,
               pageSnapping: widget.pageSnapping,
-              onPageChanged: (int i) {
-                activeIndex = i;
-                widget.onPageChanged;
-              },
+              onPageChanged: widget.onPageChanged,
               physics: widget.physics,
               controller: _pageController,
               scrollDirection: widget.scrollDirection,

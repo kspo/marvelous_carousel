@@ -1,6 +1,6 @@
 name: marvelous_carousel
 description: Marvelous Carousel enables you to craft impressive sliders, carousels, and walkthrough sliders.
-version: 0.0.12
+version: 0.0.13
 homepage: https://github.com/kspo/marvelous_carousel.git
 
 environment:
