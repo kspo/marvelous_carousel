@@ -5,40 +5,63 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 /// A widget for creating a vertical/horizontal carousel with stacked cards.
-///
-/// Attributes:
-///
-/// Input your cards in [children].
-///
+
 /// Select a [PagerType] from enum [PagerType.simple] or [PagerType.stack]
 /// [PagerType.simple] makes an animation that makes an simple effect
 /// [PagerType.stack] makes an animation that makes an stacked animation
 ///
-/// [viewportFraction] is initial viewport rates between items..
-///
-/// [margin] is horizontal space between items.
-///
-/// [onPageChanged] listen to page index changes.
-
 enum PagerType { simple, stack }
 
 class MarvelousCarousel extends StatefulWidget {
+  /// [viewportFraction] is initial viewport rates between items..
   final double viewportFraction;
+
+  /// [scaleX] property sets rotation y axis between items on change
   final double scaleX;
+
+  /// [scaleY] property sets scale y axis between items on change
   final double scaleY;
+
+  /// [rotationX] property sets rotation x axis between items on change..
   final double rotationX;
+
+  /// [rotationY] property sets rotation y axis between items on change..
   final double rotationY;
+
+  /// [opacity] property sets opcity between items on change..
   final double opacity;
+
+  /// Input your cards in [children].
   final List<Widget> children;
+
+  /// [onPageChanged] listen to page index changes.
   final ValueChanged<int>? onPageChanged;
+
+  /// [pageSnapping] snaps children on change..
   final bool pageSnapping;
+
+  /// [reverse] sets carousel right to left..
   final bool reverse;
+
+  /// [physics] default flutter physics you can set..
   final ScrollPhysics physics;
+
+  /// [scrollDirection] enables you to selecet axis horizontal or vertical..
   final Axis scrollDirection;
+
+  /// Select a [PagerType] from enum [PagerType.simple] or [PagerType.stack]
   final PagerType pagerType;
+
+  /// [overscroll] is used to select animation rate when overscrolling
   final double overscroll;
+
+  /// [dotsVisible] default true. It's mean bottom dots marks are visible
   final bool dotsVisible;
+
+  /// [dotsBottom] is used to set position from bottom
   final double dotsBottom;
+
+  /// [margin] is horizontal space between items.
   final double margin;
 
   const MarvelousCarousel({
