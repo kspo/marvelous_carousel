@@ -45,3 +45,15 @@ Here are the details of all attributes:
 | key              | Set a key for the pager                                               | Both            |
 | children         | List of child widgets to add to the pager                             | -               |
 | dotsVisible      | set true if you want to see dots                                      | -               |
+
+## MIT License
+
+Copyright (c) 2023 Kazım Selman Poyraz
+
+
+[linkedin]: https://www.linkedin.com/in/kaz%C4%B1m-selman-poyraz-0048b7143/
+[github]: https://github.com/kspo
+
+[pull_down_button]: https://pub.dev/packages/pull_down_button#pulldownbuttontheme
+[marqueer]: https://pub.dev/packages/marqueer
+[chart_sparkline]: https://pub.dev/packages/chart_sparkline
