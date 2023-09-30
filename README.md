@@ -12,7 +12,7 @@ Marvelous Carousel is a widget that allows you to horizontally or vertically scr
 ## 📸 Screenshots
 |Main Screen|
 |---|
-|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/main.png" style="width:300px"/>|
+|<img src="https://raw.githubusercontent.com/kspo/marvelous_carousel/main/screenshots/main.png" style="width:300px" width="300px"/>|
  
  ### Example Screenshots
 |Simple|Rotation|Scale Items|
