@@ -4,6 +4,24 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+/// A widget for creating a vertical/horizontal carousel with stacked cards.
+///
+/// Attributes:
+///
+/// Input your cards in [children].
+///
+/// Select a [PagerType] from enum [PagerType.simple] or [PagerType.stack]
+/// [PagerType.simple] makes an animation that makes an simple effect
+/// [PagerType.stack] makes an animation that makes an stacked animation
+///
+/// [viewportFraction] is initial viewport rates between items..
+///
+/// [margin] is horizontal space between items.
+///
+/// [onPageChanged] listen to page index changes.
+
+enum PagerType { simple, stack }
+
 class MarvelousCarousel extends StatefulWidget {
   final double viewportFraction;
   final double scaleX;
@@ -87,8 +105,6 @@ class MarvelousCarousel extends StatefulWidget {
   @override
   MarvelousCarouselState createState() => MarvelousCarouselState();
 }
-
-enum PagerType { simple, stack }
 
 class MarvelousCarouselState extends State<MarvelousCarousel> {
   late PageController _pageController;
