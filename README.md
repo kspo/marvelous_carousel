@@ -7,6 +7,7 @@ Marvelous Carousel is a widget that allows you to horizontally or vertically scr
 [![Github: Kspo](https://img.shields.io/badge/Kspo-white?logo=Github&logoColor=000)][github]
 ![GitHub Licence](https://img.shields.io/github/license/kspo/apple_stocks_app_clone?label=Licence)
 ![GitHub last commit](https://img.shields.io/github/last-commit/kspo/apple_stocks_app_clone?label=Last+Commit)
+[![Pub.dev: Kspoyraz](https://img.shields.io/badge/pub.dev_link-marvelous_carousel-magenta?logo=dart&logoColor=magenta)][pub.dev]
 
 
 ## 📸 Screenshots
@@ -57,3 +58,4 @@ Copyright (c) 2023 Kazım Selman Poyraz
 [pull_down_button]: https://pub.dev/packages/pull_down_button#pulldownbuttontheme
 [marqueer]: https://pub.dev/packages/marqueer
 [chart_sparkline]: https://pub.dev/packages/chart_sparkline
+[pub.dev]:https://pub.dev/packages/marvelous_carousel
